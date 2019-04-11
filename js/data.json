@@ -1,0 +1,20 @@
+runnerBase = {
+    "runnerNames": ["Jane", "John", "Mike", "Tom", "Donald"],
+    "runnerDesc":
+    {
+        "0": "Senator from California; former attorney general of California; former San Francisco district attorney",
+        "1": "President of Taco Bell; Avid gamer",
+        "2": "I don't know who this guy is; Here's some more placeholder text",
+        "3": "Javascript developer; not well liked",
+        "4": "Awful person"
+    },
+    "runnerHealth" : 
+    {
+    	"0": "Senator from California; former attorney general of California; former San Francisco district attorney",
+        "1": "President of Taco Bell; Avid gamer",
+        "2": "I don't know who this guy is; Here's some more placeholder text",
+        "3": "Javascript developer; not well liked",
+        "4": "Awful person"
+    },
+
+}

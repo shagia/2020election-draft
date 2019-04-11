@@ -1,0 +1,80 @@
+#infoSideA, #infoSideB {
+	display: none;
+}
+
+:root {
+	font-size: 1rem;
+}
+
+body {
+	font-size: 100%;
+}
+
+.iconContainer:hover {
+	transition: 1s;
+	border: 2px solid black;
+}
+
+
+#navBar {
+	position: fixed;
+	display: flex;
+
+	flex-direction: column;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	max-width: 100%;
+	bottom: 2%;
+}
+
+.infoContainers {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 5%;
+}
+
+.iconContainer > a {
+	display: block;
+}
+
+.iconActive {
+	background-color: blue;
+	border: 2px black solid;
+}
+
+.iconContainer { 
+	margin: 0px 20px 0px 0px;
+	border: 0px solid black;
+	border-radius: 6px;
+
+	transition: 1s;
+}
+
+.iconContainer img {
+	border-radius: 6px;
+}
+
+.headerDetails {
+	display: none;
+}
+
+
+@media only screen and (max-width: 736px) {
+
+body {
+	font-size: 80%;
+}
+
+.sectionTitle {
+	font-weight: bold;
+}
+
+/* This is not truly centered, there may be more elements involved in the final version so it's good to actually get a centered version figured out */
+
+#navBar {
+	flex-direction: row;
+	left: 20%;
+	right: 20%;
+}
+
+}
