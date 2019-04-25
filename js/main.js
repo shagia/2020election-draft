@@ -35,7 +35,6 @@ function addEventListenerList(list, event, fn) {
 function updateStateDOM(ele) {
 
     var sideA = document.getElementById("infoSideA")
-    var sideB = document.getElementById("infoSideB")
     const runnerDeets = document.getElementsByClassName("runnerName")
     const sectionDesc = document.getElementsByClassName("sectionDescription")
     const testName = "Tom"
@@ -45,26 +44,15 @@ function updateStateDOM(ele) {
         console.log("Nothin's showin")
         states = [true, false, false]
         sideA.style.display = 'none'
-        sideB.style.display = 'none'
     } else if (currSelect.length == 1) {
         console.log("One thing showin")
         states = [false, true, false]
 
         sideA.style.display = 'block'
-        sideB.style.display = 'none'
 
 
         sideA.getElementsByClassName("runnerName")[0].innerHTML = runnerBase.runnerNames[ele]
         sideA.getElementsByClassName("runnerDetails")[0].innerHTML = runnerBase.runnerDesc[ele]
-
-    } else if (currSelect.length == 2) {
-        console.log("Two things showin")
-        states = [false, false, true]
-
-        sideB.style.display = 'block'
-
-        sideB.getElementsByClassName("runnerName")[0].innerHTML = runnerBase.runnerNames[ele]
-        sideB.getElementsByClassName("runnerDetails")[0].innerHTML = runnerBase.runnerDesc[ele]
 
     }
 }
@@ -93,7 +81,7 @@ addEventListenerList(navBarItemsArray, 'click', function() {
         updateStateDOM(getChildren.dataset.number)
     }
 
-    else if (currSelect.length == 2) {
+    else if (currSelect.length == 1) {
 
         console.log(getChildren.dataset.number);
         currSelect.shift()
