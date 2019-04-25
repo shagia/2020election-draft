@@ -86,7 +86,14 @@ addEventListenerList(navBarItemsArray, 'click', function() {
         currSelect.shift()
         updateStateDOM(getChildren.dataset.number)
 
-    } else if (currSelect.length == 2) {
+    } else if (this == currSelect[0] && this ) {
+
+    	console.log(getChildren.dataset.number);
+        currSelect.shift()
+        updateStateDOM(getChildren.dataset.number)
+    }
+
+    else if (currSelect.length == 2) {
 
         console.log(getChildren.dataset.number);
         currSelect.shift()
