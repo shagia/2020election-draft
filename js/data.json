@@ -1,5 +1,9 @@
-runnerBase = {
-    "runnerNames": ["Jane", "John", "Mike", "Tom", "Donald"],
+/* runnerBase = {
+    "runnerNames": ["Jane", 
+        "John", 
+        "Mike", 
+        "Tom", 
+        "Donald"],
     "runnerDesc":
     {
         "0": "Senator from California; former attorney general of California; former San Francisco district attorney",
@@ -17,4 +21,46 @@ runnerBase = {
         "4": "Awful person"
     },
 
+} */
+
+runnerBase = {
+    "runnerNames": 
+        ["Cory Booker", "Pete Buttigieg", "Julian Castro", "John Delaney", "Tulsi Gabbard", "Kirsten Gillibrand", "Kamala Harris", "John Hickenlooper", "Jay Inslee", "Amy Klobuchar", "Wayne Messam", "Beto O’Rourke", "Tim Ryan", "Bernie Sanders", "Eric Swalwell", "Elizabeth Warren", "Marianne Williamson", "Andrew Yang", "William Feld"],
+
+    "runnerParty": 
+        ["Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat", "Democrat"],
+    
+    "runnerDesc": 
+        ["from Newark, New Jersey. Former Mayor of Newark, current junior Senator from New Jersey",
+         "from South Bend, Indiana. Mayor of South Bend for past eight years, Afghan war veteran",
+         "from San Antonio, Texas. Former mayor of San Antonio, Obama’s Secretary of Housing and Development",
+         "from Montgomery County, Maryland. Congressman for Maryland’s 6th congressional district",
+         "from Honolulu, Hawaii. Congresswoman for Hawaii’s 2nd congressional district",
+         "from Brunswick, New York. Senator from New York",
+         "from Los Angeles, California (originally from Oakland). Former attorney general of California, current junior Senator from California",
+         "from Denver, Colorado. Former mayor of Denver, current governor of Colorado",
+         "from the Seattle, Washington area. Former congressman from Washington’s 4th congressional district, current governor of Washington",
+         "from Minneapolis, Minnesota. Current senator for Minnesota",
+         "from Miramar, Florida. Current Mayor of Miramar, former entrepreneur (started a construction business with wife)",
+         "from El Paso, Texas. Current congressman for Texas’ 16th congressional district, recently ran for senator against popular incumbent Ted Cruz",
+         "from Niles, Ohio. Current congressman for Ohio’s 13th congressional district, former state senator and congressional staffer",
+         "from Burlington, Vermont. Former mayor of Burlington and at-large congressman for Vermont, current senator of Vermont",
+         "from Dublin, California. Current congressman for California’s 15th congressional district, former prosecutor for Alameda County",
+         "from Cambridge, Massachusetts. Current senator from Massachusetts",
+         "from Houston, Texas (currently lives in Frederic, Wisconsin). New York Times bestselling author, lecturer, and has appeared on Oprah",
+         "from Schenectady, New York. Former CEO of Manhattan Prep (education company), founder of Venture for America",
+         "from Massachusetts. Former governor of Massachusetts and federal prosecutor"],
+
+    "runnerEducation": 
+        [],
+    "runnerHealth": 
+        [],
+    "runnerImmigration": 
+        [],
+    "runnerCivil":
+        [],
+    "runnerEnvironment":
+        [],
+    "runnerGunControl":
+        []
 }
