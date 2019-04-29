@@ -4,6 +4,24 @@
 // var onRunner = false
 // dual runner view state
 // var onRunners = false
+var csvData
+
+const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCjrJ9uA1brSWer7j14KBGqywYX63GkyenG6l79zbVirQWKsVSHK9cx6NKRnGhGkXQHPYV2o-HPdyQ/pub?output=csv"
+
+async function fetchData(url_){
+  const data = await fetch(url_)
+            .then(res => res.text()) // convert body stream to string text
+            .then(res => d3.csvParse(res)); //d3 csv parse string texts to array of objects
+  
+  return data;
+}
+
+async function init(){
+  csvData = await fetchData(url); // fetch data await for async function to continue
+  console.log(csvData);
+}
+
+init();
 
 
 /* The states let describes what's being shown on the screen. The first state, 0, is for the home screen, the second state, 1, is for the single column runner screen, and the third state, 2, is for the dual column runner screen. */
@@ -37,6 +55,7 @@ function updateStateDOM(ele) {
     var sideA = document.getElementById("infoSideA")
     const runnerDeets = document.getElementsByClassName("runnerName")
     const sectionDesc = document.getElementsByClassName("sectionDescription")
+    const runnerDesc = document.getElementsByClassName("sectionDescription1")
     const testName = "Tom"
 
 
@@ -50,9 +69,20 @@ function updateStateDOM(ele) {
 
         sideA.style.display = 'block'
 
+        sideA.getElementsByClassName("runnerName")[0].innerHTML = csvData[ele].Name
+        sideA.getElementsByClassName("runnerDetails")[0].innerHTML = csvData[ele].Description
 
-        sideA.getElementsByClassName("runnerName")[0].innerHTML = runnerBase.runnerNames[ele]
+
+        /*sideA.getElementsByClassName("runnerName")[0].innerHTML = runnerBase.runnerNames[ele]
         sideA.getElementsByClassName("runnerDetails")[0].innerHTML = runnerBase.runnerDesc[ele]
+        sideA.getElementsByClassName("sectionDescription1")[0].innerHTML = runnerBase.runnerEducation[ele]
+        sideA.getElementsByClassName("sectionDescription2")[0].innerHTML = runnerBase.runnerHealth[ele]
+        sideA.getElementsByClassName("sectionDescription3")[0].innerHTML = runnerBase.runnerImmigration[ele]
+        sideA.getElementsByClassName("sectionDescription4")[0].innerHTML = runnerBase.runnerCivil[ele]
+        sideA.getElementsByClassName("sectionDescription5")[0].innerHTML = runnerBase.runnerEnvironment[ele]
+        sideA.getElementsByClassName("sectionDescription6")[0].innerHTML = runnerBase.runnerGunControl[ele]*/
+
+
 
     }
 }
