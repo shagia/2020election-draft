@@ -1,11 +1,7 @@
-// home state
-// var onHome = true
-// runner view state
-// var onRunner = false
-// dual runner view state
-// var onRunners = false
 var csvData
 const navBarSource = document.getElementById('navBar');
+
+
 
 const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCjrJ9uA1brSWer7j14KBGqywYX63GkyenG6l79zbVirQWKsVSHK9cx6NKRnGhGkXQHPYV2o-HPdyQ/pub?output=csv"
 async function fetchData(url_){
@@ -29,7 +25,7 @@ async function init(){
 
   for (let i = 0; i < csvData.length; i++){
     console.log(csvData[i]);
-    
+
   }
 
 }
@@ -49,8 +45,10 @@ var currSelect = []
 const navBar = document.getElementById("navBar")
 // Gets the children of navbar
 const navBarItems = navBar.getElementsByClassName("iconContainer")
+const iconImgItems = navBar.getElementsByClassName("iconImg")
 // Converts the children to an array because HTMLcollection is not a REAL array
 const navBarItemsArray = Array.prototype.slice.call(navBarItems)
+const iconImgItemsArray = Array.prototype.slice.call(iconImgItems)
 
 
 // function to add multiple listeners to classes -- really nice!
@@ -108,39 +106,39 @@ function updateStateDOM(ele) {
 
 
 
-addEventListenerList(navBarItemsArray, 'click', function() {
+addEventListenerList(iconImgItemsArray, 'click', function() {
     console.log(this.textContent);
-    var getChildren = this.getElementsByClassName("iconImg")[0];
+    var getChildren = this.getElementsByClassName("iconImg");
 
     if (this == currSelect[0]) {
-        console.log(getChildren.dataset.number);
+        console.log(this.dataset.number);
         currSelect.shift()
-        updateStateDOM(getChildren.dataset.number)
+        updateStateDOM(this.dataset.number)
 
     } else if (this == currSelect[1]) {
 
-        console.log(getChildren.dataset.number);
+        console.log(this.dataset.number);
         currSelect.shift()
-        updateStateDOM(getChildren.dataset.number)
+        updateStateDOM(this.dataset.number)
 
     } else if (this == currSelect[0] && this ) {
 
-    	console.log(getChildren.dataset.number);
+    	console.log(this.dataset.number);
         currSelect.shift()
-        updateStateDOM(getChildren.dataset.number)
+        updateStateDOM(this.dataset.number)
     }
 
     else if (currSelect.length == 1) {
 
-        console.log(getChildren.dataset.number);
+        console.log(this.dataset.number);
         currSelect.shift()
         currSelect.push(this)
-        updateStateDOM(getChildren.dataset.number)
+        updateStateDOM(this.dataset.number)
 
     } else {
-        console.log(getChildren.dataset.number);
+        console.log(this.dataset.number);
         currSelect.push(this);
-        updateStateDOM(getChildren.dataset.number);
+        updateStateDOM(this.dataset.number);
     }
 
 })
