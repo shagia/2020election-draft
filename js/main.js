@@ -18,15 +18,19 @@ async function fetchData(url_){
 async function init(){
   csvData = await fetchData(url); // fetch data await for async function to continue
   var newNode = document.createElement('div')
-  console.log(csvData);
 
-  csvData.forEach(function(element) {
+  /*csvData.forEach(function(element) {
     console.log(element);
     newNode.className = 'iconContainer';
     navBarSource.appendChild(newNode);
 
 
-  })
+  })*/
+
+  for (let i = 0; i < csvData.length; i++){
+    console.log(csvData[i]);
+    
+  }
 
 }
 init();
