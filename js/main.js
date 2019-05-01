@@ -5,9 +5,9 @@
 // dual runner view state
 // var onRunners = false
 var csvData
+const navBarSource = document.getElementById('navBar');
 
 const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCjrJ9uA1brSWer7j14KBGqywYX63GkyenG6l79zbVirQWKsVSHK9cx6NKRnGhGkXQHPYV2o-HPdyQ/pub?output=csv"
-
 async function fetchData(url_){
   const data = await fetch(url_)
             .then(res => res.text()) // convert body stream to string text
@@ -15,13 +15,22 @@ async function fetchData(url_){
   
   return data;
 }
-
 async function init(){
   csvData = await fetchData(url); // fetch data await for async function to continue
+  var newNode = document.createElement('div')
   console.log(csvData);
-}
 
+  csvData.forEach(function(element) {
+    console.log(element);
+    newNode.className = 'iconContainer';
+    navBarSource.appendChild(newNode);
+
+
+  })
+
+}
 init();
+
 
 
 /* The states let describes what's being shown on the screen. The first state, 0, is for the home screen, the second state, 1, is for the single column runner screen, and the third state, 2, is for the dual column runner screen. */
