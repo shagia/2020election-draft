@@ -1,6 +1,12 @@
-var csvData
+var csvData = []
 const navBarSource = document.getElementById('navBar');
+/* The states let describes what's being shown on the screen. The first state, 0, is for the home screen, the second state, 1, is for the single column runner screen, and the third state, 2, is for the dual column runner screen. */
+let states = [true, false, false]
+// Runners currently selected
+var currSelect = []
 
+// Gets the parent navbar
+const navBar = document.getElementById("navBar")
 
 
 const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCjrJ9uA1brSWer7j14KBGqywYX63GkyenG6l79zbVirQWKsVSHK9cx6NKRnGhGkXQHPYV2o-HPdyQ/pub?output=csv"
@@ -11,56 +17,49 @@ async function fetchData(url_){
   
   return data;
 }
+
+
+
 async function init(){
   csvData = await fetchData(url); // fetch data await for async function to continue
-  var newNode = document.createElement('div')
-
-  /*csvData.forEach(function(element) {
-    console.log(element);
-    newNode.className = 'iconContainer';
-    navBarSource.appendChild(newNode);
-
-
-  })*/
-
+  
   for (let i = 0; i < csvData.length; i++){
-    console.log(csvData[i]);
 
+    function generateIcon(key){
+    var newAnchor = document.createElement('a')
+    newAnchor.className = 'iconContainer iconImg';
+    newAnchor.href = "#";
+    newAnchor.dataset.number = key
+
+    var imgNode = document.createElement('img')
+    imgNode.src = "https://picsum.photos/100/100"
+    imgNode.className = 'iconImgSrc'
+
+    var textNode = document.createTextNode(csvData[i].Name);
+    
+    newAnchor.appendChild(imgNode);
+    newAnchor.appendChild(textNode);
+    navBarSource.appendChild(newAnchor);
+    }
+
+    generateIcon(i)
   }
-
 }
+
+
 init();
 
+window.addEventListener('DOMContentLoaded', (event) => {
 
-
-/* The states let describes what's being shown on the screen. The first state, 0, is for the home screen, the second state, 1, is for the single column runner screen, and the third state, 2, is for the dual column runner screen. */
-
-let states = [true, false, false]
-
-
-// Runners currently selected
-var currSelect = []
-
-// Gets the parent navbar
-const navBar = document.getElementById("navBar")
 // Gets the children of navbar
 const navBarItems = navBar.getElementsByClassName("iconContainer")
 const iconImgItems = navBar.getElementsByClassName("iconImg")
 // Converts the children to an array because HTMLcollection is not a REAL array
-const navBarItemsArray = Array.prototype.slice.call(navBarItems)
-const iconImgItemsArray = Array.prototype.slice.call(iconImgItems)
+const navBarItemsArray = Array.from(navBarItems)
+/*const iconImgItemsArray = Array.prototype.slice.call()*/
 
 
-// function to add multiple listeners to classes -- really nice!
-function addEventListenerList(list, event, fn) {
-    for (var i = 0, len = list.length; i < len; i++) {
-        list[i].addEventListener(event, fn, false);
-    }
-}
-
-
-
-// This is to support what states are being shown based on currSelect's items 
+console.log(navBarItems)
 function updateStateDOM(ele) {
 
     var sideA = document.getElementById("infoSideA")
@@ -105,8 +104,33 @@ function updateStateDOM(ele) {
 }
 
 
+document.getElementsByClassName("iconImg")[0].addEventListener('click', function(){
+console.log(this)})
 
-addEventListenerList(iconImgItemsArray, 'click', function() {
+
+});
+
+
+
+// function to add multiple listeners to classes -- really nice!
+function addEventListenerList(list, event, fn) {
+    for (var i = 0, len = list.length; i < len; i++) {
+        list[i].addEventListener(event, fn, false);
+    }
+}
+
+
+
+// This is to support what states are being shown based on currSelect's items 
+
+
+
+
+
+
+
+
+addEventListenerList(iconImgItems, 'click', function() {
     console.log(this.textContent);
     var getChildren = this.getElementsByClassName("iconImg");
 

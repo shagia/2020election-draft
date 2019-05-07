@@ -52,7 +52,7 @@ runnerBase = {
          "from Massachusetts. Former governor of Massachusetts and federal prosecutor"],
 
     "runnerEducation": 
-        [],
+        [" "],
     "runnerHealth": 
         [],
     "runnerImmigration": 
