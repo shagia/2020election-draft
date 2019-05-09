@@ -1,3 +1,5 @@
+/* global d3, addeventlistenerlist, updatestatedom */
+
 var csvData = []
 const navBarSource = document.getElementById('navBar');
 /* The states let describes what's being shown on the screen. The first state, 0, is for the home screen, the second state, 1, is for the single column runner screen, and the third state, 2, is for the dual column runner screen. */
@@ -24,7 +26,8 @@ async function init(){
   csvData = await fetchData(url); // fetch data await for async function to continue
   
   for (let i = 0; i < csvData.length; i++){
-
+    
+    // Draws a node for each array in the csv, gets the relevant array key through the current iteration number
     function generateIcon(key){
     var newAnchor = document.createElement('a')
     newAnchor.className = 'iconContainer iconImg';
@@ -44,22 +47,30 @@ async function init(){
 
     generateIcon(i)
   }
+  
+  // Gets the children of navbar
+  const navBarItems = document.getElementById("navBar").getElementsByClassName("iconContainer")
+  const iconImgItems = document.getElementById("navBar").getElementsByClassName("iconImg")
+  // Converts the children to an array because HTMLcollection is not a REAL array
+  const navBarItemsArray = Array.from(navBarItems)
+  /*const iconImgItemsArray = Array.prototype.slice.call()*/
+
+window.onload = function(){
+
+  navBarItems[0].addEventListener('click', function(){
+  console.log(this)
+  })
+  
+};
+  
 }
-
-
 init();
-
-window.addEventListener('DOMContentLoaded', (event) => {
-
-// Gets the children of navbar
-const navBarItems = navBar.getElementsByClassName("iconContainer")
-const iconImgItems = navBar.getElementsByClassName("iconImg")
-// Converts the children to an array because HTMLcollection is not a REAL array
-const navBarItemsArray = Array.from(navBarItems)
-/*const iconImgItemsArray = Array.prototype.slice.call()*/
+    
+      
+      
 
 
-console.log(navBarItems)
+      
 function updateStateDOM(ele) {
 
     var sideA = document.getElementById("infoSideA")
@@ -87,82 +98,5 @@ function updateStateDOM(ele) {
         sideA.getElementsByClassName("sectionDescription4")[0].innerHTML = csvData[ele].Civil
         sideA.getElementsByClassName("sectionDescription5")[0].innerHTML = csvData[ele].Environment
         sideA.getElementsByClassName("sectionDescription6")[0].innerHTML = csvData[ele].Gun_Control
-
-
-        /*sideA.getElementsByClassName("runnerName")[0].innerHTML = runnerBase.runnerNames[ele]
-        sideA.getElementsByClassName("runnerDetails")[0].innerHTML = runnerBase.runnerDesc[ele]
-        sideA.getElementsByClassName("sectionDescription1")[0].innerHTML = runnerBase.runnerEducation[ele]
-        sideA.getElementsByClassName("sectionDescription2")[0].innerHTML = runnerBase.runnerHealth[ele]
-        sideA.getElementsByClassName("sectionDescription3")[0].innerHTML = runnerBase.runnerImmigration[ele]
-        sideA.getElementsByClassName("sectionDescription4")[0].innerHTML = runnerBase.runnerCivil[ele]
-        sideA.getElementsByClassName("sectionDescription5")[0].innerHTML = runnerBase.runnerEnvironment[ele]
-        sideA.getElementsByClassName("sectionDescription6")[0].innerHTML = runnerBase.runnerGunControl[ele]*/
-
-
-
     }
 }
-
-
-document.getElementsByClassName("iconImg")[0].addEventListener('click', function(){
-console.log(this)})
-
-
-});
-
-
-
-// function to add multiple listeners to classes -- really nice!
-function addEventListenerList(list, event, fn) {
-    for (var i = 0, len = list.length; i < len; i++) {
-        list[i].addEventListener(event, fn, false);
-    }
-}
-
-
-
-// This is to support what states are being shown based on currSelect's items 
-
-
-
-
-
-
-
-
-addEventListenerList(iconImgItems, 'click', function() {
-    console.log(this.textContent);
-    var getChildren = this.getElementsByClassName("iconImg");
-
-    if (this == currSelect[0]) {
-        console.log(this.dataset.number);
-        currSelect.shift()
-        updateStateDOM(this.dataset.number)
-
-    } else if (this == currSelect[1]) {
-
-        console.log(this.dataset.number);
-        currSelect.shift()
-        updateStateDOM(this.dataset.number)
-
-    } else if (this == currSelect[0] && this ) {
-
-    	console.log(this.dataset.number);
-        currSelect.shift()
-        updateStateDOM(this.dataset.number)
-    }
-
-    else if (currSelect.length == 1) {
-
-        console.log(this.dataset.number);
-        currSelect.shift()
-        currSelect.push(this)
-        updateStateDOM(this.dataset.number)
-
-    } else {
-        console.log(this.dataset.number);
-        currSelect.push(this);
-        updateStateDOM(this.dataset.number);
-    }
-
-})
