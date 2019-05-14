@@ -28,24 +28,20 @@ async function init(){
   for (let i = 0; i < csvData.length; i++){
     
     // Draws a node for each array in the csv, gets the relevant array key through the current iteration number
-    function generateIcon(key){
-    var newAnchor = document.createElement('a')
-    newAnchor.className = 'iconContainer iconImg';
-    newAnchor.href = "#";
-    newAnchor.dataset.number = key
-
-    var imgNode = document.createElement('img')
-    imgNode.src = "https://picsum.photos/100/100"
-    imgNode.className = 'iconImgSrc'
-
-    var textNode = document.createTextNode(csvData[i].Name);
+    /******
+    No Neeed to declare generateIcon function inside a for loop,
+    othewise for each iteration you will be spending computing redeclaring a function,
+    deafeating the purporse of code reuse, i've moved it away, plus 
     
-    newAnchor.appendChild(imgNode);
-    newAnchor.appendChild(textNode);
-    navBarSource.appendChild(newAnchor);
-    }
-
-    generateIcon(i)
+    your original function you pass i as parameter key, but then use csvData[i] which is not
+    delcared in the scope of generateIcon.
+    
+    What you probably want to do is to generateIcon(csvData[i]) passing the current csvRowEntry row you're
+    interating over and the index for the key as you've design
+     
+     you can add the addEventListener on your generate Icon too
+    *******/
+    generateIcon(csvData[i], i)
   }
   
   // Gets the children of navbar
@@ -53,22 +49,42 @@ async function init(){
   const iconImgItems = document.getElementById("navBar").getElementsByClassName("iconImg")
   // Converts the children to an array because HTMLcollection is not a REAL array
   const navBarItemsArray = Array.from(navBarItems)
+  console.log(navBarItemsArray);
   /*const iconImgItemsArray = Array.prototype.slice.call()*/
 
-window.onload = function(){
-
-  navBarItems[0].addEventListener('click', function(){
-  console.log(this)
-  })
-  
-};
+  /* remove window load , eventlistener is on generteIcon */
   
 }
 init();
     
-      
-      
 
+function generateIcon(csvRowEntry, key){
+     // gets csv row and key an generate icons
+      var newAnchor = document.createElement('a')
+      newAnchor.className = 'iconContainer iconImg';
+      newAnchor.href = "#";
+      newAnchor.dataset.number = key
+
+      var imgNode = document.createElement('img')
+      imgNode.src = "https://picsum.photos/100/100"
+      imgNode.className = 'iconImgSrc'
+
+      var textNode = document.createTextNode(csvRowEntry.Name);
+
+      newAnchor.appendChild(imgNode);
+      newAnchor.appendChild(textNode);
+      newAnchor.addEventListener('click', navClick); // add event in each a link, call navClick
+      navBarSource.appendChild(newAnchor);
+    }
+
+function navClick(event){
+  //**this** is the dom scope for the element the event is coming
+  //therefore you don't need to select it, **this** is the selection
+  const dataNumber = this.dataset.number;
+  console.log("coming from: ", dataNumber);
+  currSelect = dataNumber;
+  updateStateDOM(dataNumber);
+}
 
       
 function updateStateDOM(ele) {
