@@ -89,22 +89,15 @@ function navClick(event){
       
 function updateStateDOM(ele) {
 
+    console.log(this)
+
     var sideA = document.getElementById("infoSideA")
     const runnerDeets = document.getElementsByClassName("runnerName")
     const sectionDesc = document.getElementsByClassName("sectionDescription")
     const runnerDesc = document.getElementsByClassName("sectionDescription1")
     const testName = "Tom"
-
-
-    if (currSelect.length == 0) {
-        console.log("Nothin's showin")
-        states = [true, false, false]
-        sideA.style.display = 'none'
-    } else if (currSelect.length == 1) {
-        console.log("One thing showin")
-        states = [false, true, false]
-
-        sideA.style.display = 'block'
+    
+    sideA.style.display = 'block'
 
         sideA.getElementsByClassName("runnerName")[0].innerHTML = csvData[ele].Name
         sideA.getElementsByClassName("runnerDetails")[0].innerHTML = csvData[ele].Description
@@ -114,5 +107,5 @@ function updateStateDOM(ele) {
         sideA.getElementsByClassName("sectionDescription4")[0].innerHTML = csvData[ele].Civil
         sideA.getElementsByClassName("sectionDescription5")[0].innerHTML = csvData[ele].Environment
         sideA.getElementsByClassName("sectionDescription6")[0].innerHTML = csvData[ele].Gun_Control
-    }
+
 }
