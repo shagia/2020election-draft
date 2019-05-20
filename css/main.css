@@ -64,6 +64,8 @@ h1 {
 
 	overflow-y: scroll;
 	height: 68vh;
+
+	margin-left: 20%;
 }
 
 #infoSideA {
@@ -145,6 +147,25 @@ body {
 	overflow-x: scroll;
 	max-width: 100%;
 	bottom: 2%;
+}
+
+.infoContainers {
+	display: flex;
+	align-items: center;
+    justify-content: center;
+
+    position: relative;
+    align-self: center;
+
+
+	margin: 5% 5% 5% 5%;
+	padding: 8%;
+
+	border-radius: 8px;
+	background-color: rgba(158,158,158,0.5);
+
+	overflow-y: scroll;
+	height: 68vh;
 }
 
 }
