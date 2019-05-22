@@ -84,9 +84,15 @@ h1 {
 
 .runnerHeader {
 	display: flex;
+	align-items: center;
+}
+
+.runnerDetails {
+	font-size: 0.6rem;
 }
 
 .runnerName {
+	font-size: 1rem;
 	background-image: linear-gradient(to right, rgba(135,212,255,0.58), rgba(0,0,0,0));
 	padding: 3px;
 	border-radius: 5px;
@@ -100,6 +106,14 @@ h1 {
 	background-color: blue;
 	border: 2px black solid;
 	border-radius: 100%;
+
+}
+
+.headShot img {
+	border: solid 4px black;
+ 	border-radius: 10px;
+	background-origin: border-box;
+	margin: 0px 10px 0px 0px;
 
 }
 
