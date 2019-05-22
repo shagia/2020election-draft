@@ -72,6 +72,10 @@ h1 {
 	height: 100%;
 	}
 
+.sectionTitle {
+	font-size: 1.2rem;
+}
+
 
 .runnerHeader {
 	display: flex;
@@ -143,8 +147,8 @@ body {
 
 #navBar {
 	flex-direction: row;
-	left: 20%;
-	right: 20%;
+	left: 0%;
+	right: 0%;
 
 	position: fixed;
 	display: flex;
