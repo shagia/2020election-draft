@@ -76,6 +76,11 @@ h1 {
 	font-size: 1.2rem;
 }
 
+.descriptionText{
+	font-size: 1rem;
+	padding-bottom: 10px;
+}
+
 
 .runnerHeader {
 	display: flex;
