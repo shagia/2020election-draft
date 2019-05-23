@@ -67,7 +67,7 @@ h1 {
     background-color: rgba(158, 158, 158, 0.5);
 
     overflow-y: scroll;
-    height: 68vh;
+    height: 50%;
 
     margin-left: 20%;
 }
@@ -153,6 +153,9 @@ h1 {
     #navBar {
         top: 2%;
     }
+
+
+
 }
 
 
