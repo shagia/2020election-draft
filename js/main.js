@@ -104,7 +104,6 @@ function updateStateDOM(ele) {
     sideA.getElementsByClassName("sectionDescription1")[0].innerHTML = csvData[ele].Education
     sideA.getElementsByClassName("sectionDescription2")[0].innerHTML = csvData[ele].Health
     sideA.getElementsByClassName("sectionDescription3")[0].innerHTML = csvData[ele].Immigration
-    sideA.getElementsByClassName("sectionDescription4")[0].innerHTML = csvData[ele].Civil
     sideA.getElementsByClassName("sectionDescription5")[0].innerHTML = csvData[ele].Environment
     sideA.getElementsByClassName("sectionDescription6")[0].innerHTML = csvData[ele].Gun_Control
 
