@@ -149,18 +149,28 @@ h1 {
     display: none;
 }
 
+/* Desktop view */
+
 @media only screen and (min-width: 737px) {
     #navBar {
         top: 2%;
+        bottom: 2%;
+        left: 2%
     }
+
     .runnerName {
-    font-size: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .runnerDetails {
+    font-size: 0.8rem;
 }
 
 
 
 }
 
+/* Mobile view */
 
 @media only screen and (max-width: 736px) {
 
@@ -170,6 +180,10 @@ h1 {
 
     .sectionTitle {
         font-weight: bold;
+    }
+
+    .infoContainers {
+        padding: 4%;
     }
 
 
