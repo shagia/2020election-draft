@@ -66,13 +66,16 @@ function generateIcon(csvRowEntry, key) {
     newAnchor.dataset.number = key
 
     var imgNode = document.createElement('img')
+    var divNode = document.createElement('div')
+    divNode.className = 'iconName'
     imgNode.src = "https://picsum.photos/100/100"
     imgNode.className = 'iconImgSrc'
 
     var textNode = document.createTextNode(csvRowEntry.Name);
 
     newAnchor.appendChild(imgNode);
-    newAnchor.appendChild(textNode);
+    divNode.appendChild(textNode);
+    newAnchor.appendChild(divNode);
     newAnchor.addEventListener('click', navClick); // add event in each a link, call navClick
     navBarSource.appendChild(newAnchor);
 }
