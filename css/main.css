@@ -51,6 +51,12 @@ h1 {
     bottom: 2%;
 }
 
+.mapboxgl-map {
+    position:fixed !important; 
+    display: flex;
+    top:0; bottom:0; width:100%; height: 100%;
+}
+
 .infoContainers {
     display: flex;
     align-items: center;
