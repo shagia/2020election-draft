@@ -6,6 +6,10 @@ const navBarSource = document.getElementById('navBar');
 let states = [true, false, false]
 // Runners currently selected
 var currSelect = []
+var currLocation = [];
+var rawLocation = [];
+//Tool to split location coordinates into an array for Mapbox
+const splitFunc = location => location.split(", ");
 
 // Gets the parent navbar
 const navBar = document.getElementById("navBar")
@@ -57,6 +61,14 @@ async function init() {
 }
 init();
 
+function flyToLocation(coords) {
+  map.flyTo({
+    center: (coords),
+    zoom: 9
+  });
+}
+
+
 
 function generateIcon(csvRowEntry, key) {
     // gets csv row and key an generate icons
@@ -85,8 +97,20 @@ function navClick(event) {
     //therefore you don't need to select it, **this** is the selection
     const dataNumber = this.dataset.number;
     console.log("coming from: ", dataNumber);
+
+    function grabLocation(ele){
+        rawLocation = csvData[dataNumber].Location
+        console.log(rawLocation);
+
+        currLocation = splitFunc(rawLocation)
+        console.log(currLocation);
+
+    }
+    grabLocation(this);
     currSelect = dataNumber;
     updateStateDOM(dataNumber);
+    flyToLocation(currLocation);
+
 }
 
 

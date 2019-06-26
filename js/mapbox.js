@@ -55,10 +55,10 @@ geocodes.push(coordinateFeature(coord2, coord1));
 return geocodes;
 };
  
-/* map.addControl(new MapboxGeocoder({
+/*map.addControl(new MapboxGeocoder({
 accessToken: mapboxgl.accessToken,
 localGeocoder: coordinatesGeocoder,
 zoom: 4,
 placeholder: "Try: -40, 170",
 mapboxgl: mapboxgl
-})); */
+}));*/
