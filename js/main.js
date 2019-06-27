@@ -80,7 +80,7 @@ function generateIcon(csvRowEntry, key) {
     var imgNode = document.createElement('img')
     var divNode = document.createElement('div')
     divNode.className = 'iconName'
-    imgNode.src = "https://picsum.photos/100/100"
+    imgNode.src = csvData[key].Image
     imgNode.className = 'iconImgSrc'
 
     var textNode = document.createTextNode(csvRowEntry.Name);
