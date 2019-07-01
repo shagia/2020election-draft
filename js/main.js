@@ -25,7 +25,6 @@ async function fetchData(url_) {
 }
 
 
-
 async function init() {
     csvData = await fetchData(url); // fetch data await for async function to continue
 
