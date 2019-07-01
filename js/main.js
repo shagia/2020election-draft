@@ -22,7 +22,7 @@ async function fetchData(url_) {
         .then(res => d3.csvParse(res)); //d3 csv parse string texts to array of objects
 
     return data;
-}
+}   
 
 
 async function init() {
@@ -121,6 +121,7 @@ function updateStateDOM(ele) {
     const runnerDeets = document.getElementsByClassName("runnerName")
     const sectionDesc = document.getElementsByClassName("sectionDescription")
     const runnerDesc = document.getElementsByClassName("sectionDescription1")
+    const runnerPic = document.getElementById("headShotSrc")
     const testName = "Tom"
 
     sideA.style.display = 'block'
@@ -132,5 +133,6 @@ function updateStateDOM(ele) {
     sideA.getElementsByClassName("sectionDescription3")[0].innerHTML = csvData[ele].Immigration
     sideA.getElementsByClassName("sectionDescription5")[0].innerHTML = csvData[ele].Environment
     sideA.getElementsByClassName("sectionDescription6")[0].innerHTML = csvData[ele].Gun_Control
+    runnerPic.src = csvData[ele].Image
 
 }
