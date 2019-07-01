@@ -179,6 +179,12 @@ h1 {
 
 }
 
+.iconContainer {
+    margin: 10px 0px 10px 0px;
+    transition: 0.5s;
+    text-align: center;
+}
+
 
 
 
