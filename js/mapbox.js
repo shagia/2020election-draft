@@ -6,6 +6,7 @@ center: [-79.4512, 43.6568],
 logoPosition: 'top-left',
 zoom: 19,
 interactive: false,
+pitch: 50,
 });
  
 /* given a query in the form "lng, lat" or "lat, lng" returns the matching
