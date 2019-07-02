@@ -118,6 +118,7 @@ function updateStateDOM(ele) {
     console.log(this)
 
     var sideA = document.getElementById("infoSideA")
+    var sideIntro = document.getElementById("infoIntro")
     const runnerDeets = document.getElementsByClassName("runnerName")
     const sectionDesc = document.getElementsByClassName("sectionDescription")
     const runnerDesc = document.getElementsByClassName("sectionDescription1")
@@ -125,6 +126,8 @@ function updateStateDOM(ele) {
     const testName = "Tom"
 
     sideA.style.display = 'block'
+    sideIntro.style.display = 'none'
+    runnerPic.src = csvData[ele].Image
 
     sideA.getElementsByClassName("runnerName")[0].innerHTML = csvData[ele].Name
     sideA.getElementsByClassName("runnerDetails")[0].innerHTML = csvData[ele].Description
@@ -133,6 +136,6 @@ function updateStateDOM(ele) {
     sideA.getElementsByClassName("sectionDescription3")[0].innerHTML = csvData[ele].Immigration
     sideA.getElementsByClassName("sectionDescription5")[0].innerHTML = csvData[ele].Environment
     sideA.getElementsByClassName("sectionDescription6")[0].innerHTML = csvData[ele].Gun_Control
-    runnerPic.src = csvData[ele].Image
+
 
 }
