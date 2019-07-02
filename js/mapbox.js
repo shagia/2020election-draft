@@ -4,7 +4,8 @@ container: 'map',
 style: 'mapbox://styles/shagia/cjxdrpki7006s1cqsc8w1m5rc',
 center: [-79.4512, 43.6568],
 logoPosition: 'top-left',
-zoom: 19
+zoom: 19,
+interactive: false,
 });
  
 /* given a query in the form "lng, lat" or "lat, lng" returns the matching
