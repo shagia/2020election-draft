@@ -78,12 +78,10 @@ function navClick(event) {
 
 
 function updateStateDOM(ele) {
+    //Bind ALL of the things
     console.log(this)
     var sideA = document.getElementById("infoSideA")
     var sideIntro = document.getElementById("infoIntro")
-    const runnerDeets = document.getElementsByClassName("runnerName")
-    const sectionDesc = document.getElementsByClassName("sectionDescription")
-    const runnerDesc = document.getElementsByClassName("sectionDescription1")
     const runnerPic = document.getElementById("headShotSrc")
 
     sideA.style.display = 'block'
