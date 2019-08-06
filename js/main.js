@@ -37,10 +37,16 @@ init();
 function generateIcon(csvRowEntry, key) {
     // gets csv row and key and generates icons
     var newAnchor = document.createElement('a')
-    newAnchor.className = 'iconContainer iconImg';
-    newAnchor.href = "#";
-    newAnchor.dataset.number = key
 
+    if (csvRowEntry.Is_running == "FALSE") {
+        newAnchor.className = 'iconContainer iconImg notRunning';
+        newAnchor.href = "#";
+        newAnchor.dataset.number = key
+    } else if (csvRowEntry.Is_running == "TRUE") {
+        newAnchor.className = 'iconContainer iconImg';
+        newAnchor.href = "#";
+        newAnchor.dataset.number = key
+    }
     var imgNode = document.createElement('img')
     var divNode = document.createElement('div')
     divNode.className = 'iconName'
