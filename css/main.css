@@ -89,7 +89,16 @@ h1 {
 
 .notRunning {
     transition: 0.5s;
-    opacity: 0.2;
+}
+.notRunning:after{
+    position: absolute;
+    content: "X";
+    text-shadow: 1px 1px #000;
+    font-size: 140px;
+    transform: translate(-50%, -90%);
+    border-radius: 100% !important;
+    color: white;
+    opacity: 0.8;
 }
 .notRunning:hover {
     opacity: 1;
@@ -148,6 +157,7 @@ h1 {
     margin: 0px 20px 0px 0px;
     transition: 0.5s;
     text-align: center;
+
 }
 
 .iconContainer img {
@@ -214,6 +224,10 @@ h1 {
     body {
         font-size: 80%;
     }
+
+    .notRunning:after{
+    font-size: 90px;
+}
 
     .sectionTitle {
         font-weight: bold;
