@@ -93,11 +93,11 @@ h1 {
 .notRunning:after{
     position: absolute;
     content: "X";
-    text-shadow: 1px 1px #000;
+    text-shadow: 1px 1px #333;
     font-size: 140px;
     transform: translate(-50%, -90%);
     border-radius: 100% !important;
-    color: white;
+    color: #000;
     opacity: 0.8;
 }
 .notRunning:hover {
@@ -226,7 +226,7 @@ h1 {
     }
 
     .notRunning:after{
-    font-size: 90px;
+    font-size: 50px;
 }
 
     .sectionTitle {
