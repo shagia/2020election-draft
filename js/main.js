@@ -65,27 +65,26 @@ function generateIcon(csvRowEntry, key) {
 function navClick(event) {
     //All icons now refer to this function, therefore no need to call the children of a DOM object
     const dataNumber = this.dataset.number;
-    console.log("coming from: ", dataNumber);
-
     function grabLocation(ele) {
         rawLocation = csvData[dataNumber].Location
-        console.log(rawLocation);
-
         currLocation = splitFunc(rawLocation)
-        console.log(currLocation);
-
     }
     grabLocation(this);
     currSelect = dataNumber;
     updateStateDOM(dataNumber);
     flyToLocation(currLocation);
+}
 
+function makeAge(birthYear){
+    const d = new Date();
+    let y = d.getFullYear();
+    return y - birthYear;
+    // Currently, this doesn't account for the month and day people are born, so sometimes ages are one number inaccurate.
 }
 
 
 function updateStateDOM(ele) {
     //Bind ALL of the things
-    console.log(this)
     var sideA = document.getElementById("infoSideA")
     var sideIntro = document.getElementById("infoIntro")
     const runnerPic = document.getElementById("headShotSrc")
@@ -95,12 +94,10 @@ function updateStateDOM(ele) {
     runnerPic.src = csvData[ele].Image
 
     sideA.getElementsByClassName("runnerName")[0].innerHTML = csvData[ele].Name
-    sideA.getElementsByClassName("runnerDetails")[0].innerHTML = csvData[ele].Description
+    sideA.getElementsByClassName("runnerDetails")[0].innerHTML = makeAge(csvData[ele].Birthyear) +" years old, "+csvData[ele].Description
     sideA.getElementsByClassName("sectionDescription1")[0].innerHTML = csvData[ele].Education
     sideA.getElementsByClassName("sectionDescription2")[0].innerHTML = csvData[ele].Health
     sideA.getElementsByClassName("sectionDescription3")[0].innerHTML = csvData[ele].Immigration
     sideA.getElementsByClassName("sectionDescription5")[0].innerHTML = csvData[ele].Environment
     sideA.getElementsByClassName("sectionDescription6")[0].innerHTML = csvData[ele].Gun_Control
-
-
 }
