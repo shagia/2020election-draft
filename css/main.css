@@ -6,8 +6,6 @@
     font-family: 'Roboto-Regular'
 }
 
-
-
 #infoSideA,
 #infoSideB {
     display: none;
@@ -47,6 +45,20 @@ a:active {
 h1 {
     margin: 5px 0px 5px 0px;
     font-size: 100%;
+}
+
+.title{
+    font-size: 6rem;
+    text-align: center;
+}
+
+.subtitle{
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    font-weight: 500;
 }
 
 
