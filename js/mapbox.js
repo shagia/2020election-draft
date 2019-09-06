@@ -2,11 +2,11 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2hhZ2lhIiwiYSI6ImNqNXZrbDBycjAzMm8zMnAzdmc4N
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/shagia/cjxma03qk1mil1cmb4zdr3wko',
-center: [-79.4512, 43.6568],
+center: [-77.04, 38.907],
 logoPosition: 'top-left',
-zoom: 19,
+zoom: 2,
 interactive: false,
-pitch: 50,
+
 });
  
 /* given a query in the form "lng, lat" or "lat, lng" returns the matching
