@@ -88,15 +88,20 @@ h1 {
 
 
     margin: 5% 5% 5% 5%;
-    padding: 8%;
+    padding: 3%;
 
     border-radius: 8px;
-    background-color: rgba(158, 158, 158, 0.8);
+    background-color: rgba(230, 230, 230, 0.9);
 
     overflow-y: scroll;
     height: 50%;
 
     margin-left: 20%;
+}
+
+.runnerOverall{
+    display: flex;
+    flex-direction: column;
 }
 
 .notRunning {
@@ -141,7 +146,7 @@ h1 {
 
 .runnerName {
     font-size: 1rem;
-    background-image: linear-gradient(to right, rgba(135, 212, 255, 0.58), rgba(0, 0, 0, 0));
+    /*background-image: linear-gradient(to right, rgba(135, 212, 255, 0.58), rgba(0, 0, 0, 0));*/
     padding: 3px;
     border-radius: 5px;
 }
@@ -177,6 +182,7 @@ h1 {
     border: solid 4px black;
     border-radius: 10px;
     background-origin: border-box;
+    border-color: rgba(135, 212, 255, 0.58);
 
     transition: 0.5s;
 }
@@ -279,7 +285,6 @@ h1 {
         padding: 8%;
 
         border-radius: 8px;
-        background-color: rgba(158, 158, 158, 0.5);
 
         overflow-y: scroll;
         height: 68vh;
