@@ -101,3 +101,16 @@ function updateStateDOM(ele) {
     sideA.getElementsByClassName("sectionDescription5")[0].innerHTML = csvData[ele].Environment
     sideA.getElementsByClassName("sectionDescription6")[0].innerHTML = csvData[ele].Gun_Control
 }
+
+window.addEventListener('DOMContentLoaded', function() {
+const elementRoot = document.querySelector('html');
+const resizeObserver = new ResizeObserver(entries => {
+for (const entry of entries) {
+const { height } = entry.contentRect;
+const elementHeight = 'elementHeight:' + height;
+// console.log(elementHeight);
+parent.postMessage(elementHeight, '*');
+      }
+    });
+resizeObserver.observe(elementRoot);
+});
