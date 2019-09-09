@@ -94,10 +94,6 @@ h1 {
     border-radius: 8px;
     background-color: rgba(230, 230, 230, 0.9);
     /*border: 10px solid rgba(240, 252, 255, 0.9);*/
-
-    overflow-y: scroll;
-    height: 50%;
-
     margin-left: 20%;
 }
 
@@ -252,11 +248,6 @@ h1 {
         font-weight: bold;
     }
 
-    .infoContainers {
-        padding: 4%;
-    }
-
-
     /* This is not truly centered, there may be more elements involved in the final version so it's good to actually get a centered version figured out */
 
     #navBar {
@@ -283,12 +274,11 @@ h1 {
 
 
         margin: 5% 5% 5% 5%;
-        padding: 8%;
+        padding: 4%;
 
         border-radius: 8px;
 
         overflow-y: scroll;
-        height: 68vh;
     }
 
 }
