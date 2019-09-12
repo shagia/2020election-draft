@@ -258,8 +258,9 @@ h1 {
 
         overflow-y: hidden;
         overflow-x: scroll;
+        top: 10px;
         max-width: 100%;
-        bottom: 2%;
+        bottom: 0%;
     }
 
     .infoContainers {
@@ -270,9 +271,7 @@ h1 {
         position: relative;
         align-self: center;
 
-
-        margin-bottom: 25%;
-        margin-left: 5%;
+        margin: 30% 5% 5% 5%;
         padding: 4%;
 
         border-radius: 8px;
