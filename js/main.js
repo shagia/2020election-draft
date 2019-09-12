@@ -16,7 +16,7 @@ function flyToLocation(coords) {
     });
 }
 
-const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSzM-H4w_azUxcAsH1z4-HsdNpobNPB4vGCeSf_ugCrqfdnHkZLJmzimWcLYJ1zUoILmHa2NHvzt_Sc/pub?output=csv"
+const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCjrJ9uA1brSWer7j14KBGqywYX63GkyenG6l79zbVirQWKsVSHK9cx6NKRnGhGkXQHPYV2o-HPdyQ/pub?output=csv"
 async function fetchData(url_) {
     const data = await fetch(url_)
         .then(res => res.text()) // convert body stream to string text
