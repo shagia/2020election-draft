@@ -12,7 +12,7 @@ const splitFunc = location => location.split(", ");
 function flyToLocation(coords) {
     map.flyTo({
         center: (coords),
-        zoom: 9
+        zoom: 8
     });
 }
 
