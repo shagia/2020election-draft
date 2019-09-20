@@ -3,19 +3,94 @@
 
 <head>
     <title></title>
+    <link rel="stylesheet" href="css/main.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://yr.media/statics/yr-media-typography/yr-typography.css">
 </head>
 
 <body>
-    <iframe id="yritow" src="root.html" class="iframeThing" frameBorder="0" style="border: 0px; width: 100%; overflow: hidden;" scrolling="no" ></iframe>
+    <div id='map'></div>
+    <header>
+        <div id="headerTitle">
+            <div id="headerDetails">
+            </div>
+        </div>
+    </header>
+    <div class="infoContainers">
+        <div id="infoIntro" class="font-roboto">
+            <h1 class="title font-days-sans">2020</h1>
+            <p class="subtitle">A guide on the who’s who of the Sept 12th Debate</p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+                fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+                imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
+                eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
+                enim.</p>
+            <br>
+            <p><b>[Title] was created by YR Interactive, where young people mix journalism, design, and code.</b></p>
+                <p>Lead Developer: Devin Glover - 
+                Producer: Lucy Barnum - 
+                Editor: Nancy Deville</p>
+        </div>
+        <div id="infoSideA">
+            <div class="runnerHeader">
+                <div class="headShot">
+                    <a>
+                        <img id="headShotSrc" class="iconImgSrc" src="https://picsum.photos/100/100">
+                    </a>
+                </div>
+                <div class="runnerOverall">
+                    <h1 class="runnerName font-days-sans">
+                    </h1>
+                    <div class="runnerDetails font-roboto">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h1 class="sectionTitle font-days-sans">
+                EDUCATION
+            </h1>
+            <div class="sectionDescription1 descriptionText font-roboto">
+            </div>
+            <h1 class="sectionTitle font-days-sans">
+                HEALTHCARE
+            </h1>
+            <div class="sectionDescription2 descriptionText font-roboto">
+            </div>
+            <h1 class="sectionTitle font-days-sans">
+                IMMIGRATION
+            </h1>
+            <div class="sectionDescription3 descriptionText font-roboto">
+            </div>
+            <h1 class="sectionTitle font-days-sans">
+                ENVIRONMENT
+            </h1>
+            <div class="sectionDescription5 descriptionText font-roboto">
+            </div>
+            <h1 class="sectionTitle font-days-sans">
+                GUN CONTROL
+            </h1>
+            <div class="sectionDescription6 descriptionText font-roboto">
+            </div>
+        </div>
+    </div>
+    <nav class="font-roboto" id="navBar">
+    </nav>
+    <!-- <script src="js/data.json"></script> -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.css' type='text/css' />
+    <script defer src="js/mapbox.js"></script>
+    <script defer src="https://d3js.org/d3-dsv.v1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/resize-observer-polyfill-futurepress@1.4.2/dist/ResizeObserver.min.js"></script>
+
+    <script defer src="js/main.js"></script>
 </body>
-
-<style type="text/css">
-
-</style>
-
-<script async="" defer="" src="https://yr.media/statics/js/iframe.min.js"></script>
 
 </html>
