@@ -27,11 +27,11 @@ body {
     width: 100%;
     top: 1rem;
     margin: 0 auto;
-    padding-left: 8%;
 }
 .logo-svg{
     height: 90px;
-    width: 90px;
+    width: 100%;
+    transform: translateX(10%);
 }
 
 .footer{
@@ -271,7 +271,9 @@ h1 {
         justify-content: center;
         width: 100%;
         margin: 0 auto;
-        padding-left: 0;
+    }
+    .logo-svg{
+    transform: translateX(0%);
     }
 
     /* This is not truly centered, there may be more elements involved in the final version so it's good to actually get a centered version figured out */
@@ -314,5 +316,6 @@ h1 {
     content: '';
     width: 100%;
     height: 100%;
-    background-color:rgba(240, 252, 255, 0.6)
+    background-color:rgba(240, 252, 255, 0.6);
+    cursor
 }
