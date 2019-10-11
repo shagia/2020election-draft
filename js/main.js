@@ -16,13 +16,12 @@ function flyToLocation(coords) {
     });
 }
 
-const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCjrJ9uA1brSWer7j14KBGqywYX63GkyenG6l79zbVirQWKsVSHK9cx6NKRnGhGkXQHPYV2o-HPdyQ/pub?output=csv"
+const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCjrJ9uA1brSWer7j14KBGqywYX63GkyenG6l79zbVirQWKsVSHK9cx6NKRnGhGkXQHPYV2o-HPdyQ/pub?gid=0&single=true&output=csv"
 async function fetchData(url_) {
     const data = await fetch(url_)
         .then(res => res.text()) // convert body stream to string text
         .then(res => d3.csvParse(res)); //d3 csv parse string texts to array of objects
-
-    return data;
+    return data.filter(e => e.Enable === 'TRUE')
 }
 
 async function init() {
