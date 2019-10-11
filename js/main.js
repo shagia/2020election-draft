@@ -100,6 +100,10 @@ function updateStateDOM(ele) {
     sideA.getElementsByClassName("sectionDescription3")[0].innerHTML = csvData[ele].Immigration
     sideA.getElementsByClassName("sectionDescription5")[0].innerHTML = csvData[ele].Environment
     sideA.getElementsByClassName("sectionDescription6")[0].innerHTML = csvData[ele].Gun_Control
+    sideA.querySelectorAll('a').forEach(a => {
+        console.log(a)
+      a.setAttribute('target', '_blank');
+    })
 }
 
 window.addEventListener('DOMContentLoaded', function() {
