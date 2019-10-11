@@ -273,7 +273,7 @@ h1 {
         margin: 0 auto;
     }
     .logo-svg{
-    transform: translateX(0%);
+    transform: translateX(1.1rem);
     }
 
     /* This is not truly centered, there may be more elements involved in the final version so it's good to actually get a centered version figured out */
