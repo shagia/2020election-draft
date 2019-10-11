@@ -20,8 +20,12 @@ const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCjrJ9uA1brSWer7j1
 async function fetchData(url_) {
     const data = await fetch(url_)
         .then(res => res.text()) // convert body stream to string text
-        .then(res => d3.csvParse(res)); //d3 csv parse string texts to array of objects
-    return data.filter(e => e.Enable === 'TRUE')
+        .then(res => d3.csvParse(res)) //d3 csv parse string texts to array of objects
+        .then(d => d
+                .map(e => Object.assign(e, { lastName: e.Name.split(' ')[1]})) // add lastName field
+                .filter(e => e.Enable === 'TRUE') // filter disable rows
+        )
+        return data.sort((a,b)=> a.lastName.localeCompare(b.lastName)) //sort by lastName
 }
 
 async function init() {
