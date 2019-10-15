@@ -24,14 +24,13 @@ body {
     position: absolute;
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 50%;
+    transform: translateX(70%);
     top: 1rem;
-    margin: 0 auto;
+    
 }
 .logo-svg{
     height: 90px;
-    width: 100%;
-    transform: translateX(10%);
 }
 
 .footer{
@@ -269,11 +268,9 @@ h1 {
         position: relative;
         display: flex;
         justify-content: center;
-        width: 100%;
         margin: 0 auto;
-    }
-    .logo-svg{
-    transform: translateX(1.1rem);
+        width: 100%;
+        transform: translateX(0);
     }
 
     /* This is not truly centered, there may be more elements involved in the final version so it's good to actually get a centered version figured out */
@@ -288,11 +285,15 @@ h1 {
 
         overflow-y: hidden;
         overflow-x: scroll;
-        top: 10px;
+        top: 0px;
+        padding: 0.5rem 0rem 0rem 1rem;
         max-width: 100%;
         max-height: 100px;
         bottom: 0%;
+        background-color:rgba(240, 252, 255, 0.9);
+        backdrop-filter: blur(8px);
     }
+
 
     .infoContainers {
         display: flex;
