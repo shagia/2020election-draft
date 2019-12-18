@@ -17,4 +17,4 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd static/young-voters-guide
-          git fetch upstream && git merge upstream/master && git push
+          git pull && git fetch upstream && git merge upstream/master && git push
